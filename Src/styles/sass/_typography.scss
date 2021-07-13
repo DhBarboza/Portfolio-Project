@@ -1,10 +1,78 @@
 h1 {
-  font-family: 'Otomanopee One', sans-serif;
+  font-family: "Otomanopee One", sans-serif;
   font-size: 72px;
+  color: $white;
+  line-height: 100%;
 }
 
-h2, h3, h4, h5, h6, p {
-  font-family: 'Poppins', sans-serif;
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 48px;
+  }
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+.link {
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: bold;
+
+  transition: 1s ease;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    display:block;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 0%;
+    height: 2px;
+
+    transform: translate(15%, 50%);
+    transition: .5s ease;
+
+    background-color: $cyan;
+
+  }
+
+  &:hover {
+    // opacity: .1;
+
+    background-image: linear-gradient(to right, $red-pink, $cyan);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: $dark;
+
+    &::after {
+      width: 80%;  
+    }
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "Poppins", sans-serif;
 }
 
 h2 {
@@ -12,7 +80,22 @@ h2 {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 32px;
+
+  line-height: 150%;
+
+  background-image: linear-gradient(
+    to right,
+    $cyan 10%,
+    $orange 20%,
+    $red-pink 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: $dark;
 }
 
 h4 {
@@ -21,8 +104,55 @@ h4 {
 
 h5 {
   font-size: 24px;
+  color: $white;
 }
 
 h6 {
   font-size: 18px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.square {
+  display: inline-block;
+  margin-top: 64px;
+
+  padding: 16px 24px;
+
+  position: relative;
+
+  transition: 1s ease;
+
+  &::after {
+    content: '';
+    display: block;
+
+    z-index: -1;
+
+    position: absolute;
+    top: 0;
+    left: -60px;
+
+    width: 200px;
+    height: 60px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(270deg, $cyan 1%, $dark 100%);
+
+    transition: 1s ease;
+  }
+
+  &:hover {
+    color: $red-pink;
+    &::after{
+      box-shadow: 5px 5px 10px -3px $red-pink;
+    }
+  }
 }
