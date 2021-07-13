@@ -4,8 +4,15 @@
   box-sizing: border-box;
 }
 
+@import './sass/colors';
+@import './sass/typography';
+
+
 body {
   width: 100%;
 
   background-color: #16161D;
 }
+
+@import './sass/spacing';
+@import './sass/layout';
